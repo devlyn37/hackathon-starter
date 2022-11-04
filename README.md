@@ -5,25 +5,33 @@ fork of this beautiful repo https://github.com/ChangoMan/nextjs-ethereum-starter
 
 we're using yarn
 
-yarn install
-
-# Start up the Hardhat Network
-yarn chain
-```
-
-Here we just install the npm project's dependencies, and by running `yarn chain` we spin up an instance of Hardhat Network that you can connect to using MetaMask. In a different terminal in the same directory, run:
+run
 
 ```bash
-yarn deploy
+yarn
 ```
 
-This will deploy the contract to Hardhat Network. After this completes run:
+to install everything
+
+# Building and running stuff
+
+```bash
+yarn compile
+```
+
+This will compile the contract and update the typechains and abi in frontend as well!
 
 ```bash
 cd frontend
-yarn install
+yarn
 ```
 
 This will install the frontend packages
+
+Then run 
+
+```bash
+yarn dev
+```
 
 This will start up the Next.js development server. Your site will be available at http://localhost:3000/
