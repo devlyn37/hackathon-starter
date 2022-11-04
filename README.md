@@ -1,27 +1,9 @@
-# nextjs-ethereum-starter
+# hackathon
 
-This project was sponsored by the [BuidlGuidl](https://buidlguidl.com). Please support the BuidlGuidl if this project has been helpful!
-
----
-
-My iteration of [Austin Griffith's scaffold-eth](https://github.com/austintgriffith/scaffold-eth).
-Also inspired by [Nader Dabit's blog post](https://dev.to/dabit3/the-complete-guide-to-full-stack-ethereum-development-3j13)
-
-- [Hardhat](https://hardhat.org/)
-- [Next.js](https://nextjs.org/)
-- [RainbowKit](https://www.rainbowkit.com/)
-- [wagmi](https://wagmi.sh/)
-- [Chakra UI](https://chakra-ui.com/)
-
-👀 [View the Live Demo](https://nextjs-ethereum-starter.vercel.app/)
-
+fork of this beautiful repo https://github.com/ChangoMan/nextjs-ethereum-starter tailored more towards what I do at hackathons
 ## Getting Started
 
-It is recommended to use Yarn to avoid dependency collisions: [Yarn](https://classic.yarnpkg.com/en/docs/install)
-
-```bash
-git clone https://github.com/ChangoMan/nextjs-ethereum-starter.git
-cd nextjs-ethereum-starter
+we're using yarn
 
 yarn install
 
@@ -42,18 +24,6 @@ cd frontend
 yarn install
 ```
 
-This will install the frontend packages. We also need to set up the local configuration file.
-
-```bash
-cp .env.local.example .env.local
-```
-
-This will create a file called `.env.local`. Open up that file and fill in the `NEXTAUTH_SECRET=` environment variable.
-
-```bash
-yarn dev
-```
+This will install the frontend packages
 
 This will start up the Next.js development server. Your site will be available at http://localhost:3000/
-
-To interact with the local contract, be sure to switch your MetaMask Network to `Localhost 8545`
