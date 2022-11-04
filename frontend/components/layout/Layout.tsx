@@ -27,11 +27,6 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
                   Home
                 </Link>
               </NextLink>
-              <NextLink href="/nft" passHref>
-                <Link px="4" py="1">
-                  Mint NFT
-                </Link>
-              </NextLink>
               <NextLink href="/token-gated" passHref>
                 <Link px="4" py="1">
                   Token Gated

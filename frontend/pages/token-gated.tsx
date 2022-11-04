@@ -30,14 +30,14 @@ const TokenGated: NextPage = () => {
   const [hasNft, setHasNft] = useState(false)
 
   const { data, isError, isLoading } = useContractRead({
-    addressOrName: CONTRACT_ADDRESS,
-    contractInterface: erc721ABI,
+    address: CONTRACT_ADDRESS,
+    abi: erc721ABI,
     functionName: 'balanceOf',
-    args: address,
+    args: [address],
   })
 
   useEffect(() => {
-    if (!isLoading && data && data.toNumber) {
+    if (!isLoading && data && data.toNumber()) {
       const numberOfNfts = data.toNumber()
 
       if (numberOfNfts > 0) {
