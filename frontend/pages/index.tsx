@@ -1,6 +1,6 @@
 import { Heading, Link, Text, useToast } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { useReducer } from 'react'
+import { useState } from 'react'
 import {
   useContractWrite,
   usePrepareContractWrite,
@@ -23,15 +23,6 @@ type StateType = {
   greeting: string
   inputValue: string
 }
-type ActionType =
-  | {
-      type: 'SET_GREETING'
-      greeting: StateType['greeting']
-    }
-  | {
-      type: 'SET_INPUT_VALUE'
-      inputValue: StateType['inputValue']
-    }
 
 /**
  * Component
@@ -41,26 +32,8 @@ const initialState: StateType = {
   inputValue: '',
 }
 
-function reducer(state: StateType, action: ActionType): StateType {
-  switch (action.type) {
-    // Track the greeting from the blockchain
-    case 'SET_GREETING':
-      return {
-        ...state,
-        greeting: action.greeting,
-      }
-    case 'SET_INPUT_VALUE':
-      return {
-        ...state,
-        inputValue: action.inputValue,
-      }
-    default:
-      throw new Error()
-  }
-}
-
 const Home: NextPage = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, setState] = useState(initialState)
   const toast = useToast()
 
   const { config } = usePrepareContractWrite({
