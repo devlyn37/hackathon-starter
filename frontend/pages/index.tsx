@@ -8,11 +8,6 @@ import {
 } from 'wagmi'
 import YourContract from '../artifacts/contracts/YourContract.sol/YourContract.json'
 import { Layout } from '../components/layout/Layout'
-import { YourContract as YourContractType } from '../types/typechain'
-
-/**
- * Constants & Helpers
- */
 
 const GOERLI_CONTRACT_ADDRESS = '0x3B73833638556f10ceB1b49A18a27154e3828303'
 
