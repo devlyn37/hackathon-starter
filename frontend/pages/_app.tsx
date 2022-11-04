@@ -10,22 +10,21 @@ import type { AppProps } from 'next/app'
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 
+const devChains = [
+  chain.goerli,
+  chain.polygonMumbai,
+  chain.optimismGoerli,
+  chain.arbitrumGoerli,
+]
+const prodChains = [
+  chain.mainnet,
+  chain.polygon,
+  chain.optimism,
+  chain.arbitrum,
+]
+
 const { chains, provider, webSocketProvider } = configureChains(
-  [
-    chain.mainnet,
-    chain.polygon,
-    chain.optimism,
-    chain.arbitrum,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true'
-      ? [
-          chain.goerli,
-          chain.kovan,
-          chain.rinkeby,
-          chain.ropsten,
-          chain.localhost,
-        ]
-      : []),
-  ],
+  process.env.PRODUCTION === 'true' ? prodChains : devChains,
   [publicProvider()]
 )
 
