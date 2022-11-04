@@ -12,25 +12,17 @@ import type { NextPage } from 'next'
 import NextLink from 'next/link'
 import { useEffect, useState } from 'react'
 import { erc721ABI, useContractRead } from 'wagmi'
-import { YourNFTContract as LOCAL_CONTRACT_ADDRESS } from '../artifacts/contracts/contractAddress'
 import { Layout } from '../components/layout/Layout'
-import { useCheckLocalChain } from '../hooks/useCheckLocalChain'
 
 const GOERLI_CONTRACT_ADDRESS = '0x982659f8ce3988096A735044aD42445D6514ba7e'
 
 const TokenGated: NextPage = () => {
   const address = '0x0'
 
-  const { isLocalChain } = useCheckLocalChain()
-
-  const CONTRACT_ADDRESS = isLocalChain
-    ? LOCAL_CONTRACT_ADDRESS
-    : GOERLI_CONTRACT_ADDRESS
-
   const [hasNft, setHasNft] = useState(false)
 
   const { data, isError, isLoading } = useContractRead({
-    address: CONTRACT_ADDRESS,
+    address: GOERLI_CONTRACT_ADDRESS,
     abi: erc721ABI,
     functionName: 'balanceOf',
     args: [address],
