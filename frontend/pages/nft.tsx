@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react'
 import { create } from 'ipfs-http-client'
 import type { NextPage } from 'next'
-import { useSession } from 'next-auth/react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   useContractRead,
@@ -57,8 +56,7 @@ const NftIndex: NextPage = () => {
     ? LOCAL_CONTRACT_ADDRESS
     : GOERLI_CONTRACT_ADDRESS
 
-  const { data: session } = useSession()
-  const address = session?.user?.name
+  const address = '0x0'
 
   const toast = useToast()
 

@@ -2,7 +2,6 @@ import { Container, Flex, Link, SimpleGrid, Text } from '@chakra-ui/react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import NextLink from 'next/link'
 import React from 'react'
-import { LocalFaucetButton } from '../LocalFaucetButton'
 import { Head, MetaProps } from './Head'
 
 interface LayoutProps {
@@ -26,11 +25,6 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
               <NextLink href="/" passHref>
                 <Link px="4" py="1">
                   Home
-                </Link>
-              </NextLink>
-              <NextLink href="/authenticated" passHref>
-                <Link px="4" py="1">
-                  Authenticated
                 </Link>
               </NextLink>
               <NextLink href="/nft" passHref>
@@ -63,7 +57,6 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
             Built by{' '}
             <Link href="https://twitter.com/hunterhchang">Hunter Chang</Link>
           </Text>
-          <LocalFaucetButton />
         </Container>
       </footer>
     </>

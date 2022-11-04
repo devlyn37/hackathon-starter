@@ -9,7 +9,6 @@ import {
   Text,
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { useSession } from 'next-auth/react'
 import NextLink from 'next/link'
 import { useEffect, useState } from 'react'
 import { erc721ABI, useContractRead } from 'wagmi'
@@ -20,10 +19,7 @@ import { useCheckLocalChain } from '../hooks/useCheckLocalChain'
 const GOERLI_CONTRACT_ADDRESS = '0x982659f8ce3988096A735044aD42445D6514ba7e'
 
 const TokenGated: NextPage = () => {
-  const { data: session, status } = useSession()
-  const address = session?.user?.name
-
-  const isAuthenticated = status === 'authenticated'
+  const address = '0x0'
 
   const { isLocalChain } = useCheckLocalChain()
 
@@ -74,7 +70,7 @@ const TokenGated: NextPage = () => {
     </>
   )
 
-  if (!isAuthenticated) {
+  if (address) {
     return (
       <Layout>
         <Heading as="h1" mb="8">
