@@ -27,6 +27,11 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
                   Home
                 </Link>
               </NextLink>
+              <NextLink href="/erc20" passHref>
+                <Link px="4" py="1">
+                  ERC20-Transfer
+                </Link>
+              </NextLink>
               <NextLink href="/token-gated" passHref>
                 <Link px="4" py="1">
                   Token Gated
