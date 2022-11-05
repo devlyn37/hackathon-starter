@@ -52,12 +52,7 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         <Container maxWidth="container.xl">{children}</Container>
       </main>
       <footer>
-        <Container mt="8" py="8" maxWidth="container.xl">
-          <Text mb="4">
-            Built by{' '}
-            <Link href="https://twitter.com/hunterhchang">Hunter Chang</Link>
-          </Text>
-        </Container>
+        <Container mt="8" py="8" maxWidth="container.xl"></Container>
       </footer>
     </>
   )
